@@ -124,17 +124,3 @@
     @apply mx-auto;
   }
 }
-
-/* منع فتح الدروب داون عند hover */
-.navigation-menu [data-state="open"] > [data-trigger]:hover {
-  background-color: transparent;
-}
-
-.navigation-menu [data-state="closed"] > [data-content] {
-  display: none !important;
-}
-
-/* إلغاء فتح القوائم بالـ hover */
-.navigation-menu [data-trigger]:hover + [data-content] {
-  display: none !important;
-}
