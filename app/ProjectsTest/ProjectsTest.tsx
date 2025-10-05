@@ -169,7 +169,7 @@ const TextParallaxContent = ({
         <StickyImage imgUrl={imgUrl} />
         <OverlayCopy heading={heading} subheading={subheading} />
       </div>
-      <div className="relative z-10">{children}</div>
+      <div className="relative  z-10">{children}</div>
     </section>
   );
 };
