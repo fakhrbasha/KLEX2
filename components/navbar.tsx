@@ -25,6 +25,7 @@ const platformServices = [
   { title: 'Visuals', href: '/services/visuals' },
   { title: 'Media Buying', href: '/services/media-buying' },
   { title: 'Printing & Internal Branding', href: '/services/printing' },
+  { title: 'consultation', href: '/services/consultation' },
 ];
 
 const moreLinks = [

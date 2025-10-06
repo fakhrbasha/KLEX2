@@ -124,3 +124,29 @@
     @apply mx-auto;
   }
 }
+
+
+
+::-webkit-scrollbar {
+  width: 20px;              
+}
+
+::-webkit-scrollbar-track {
+  background: #001515;     
+  
+}
+
+::-webkit-scrollbar-thumb {
+  background: #001515;     
+  
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #001515;     
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #001515 #f1f1f1;
+}

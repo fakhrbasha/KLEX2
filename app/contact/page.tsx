@@ -1,31 +1,31 @@
-"use client"
+'use client';
 
-import type React from "react"
+import type React from 'react';
 
-import { TrustedBy } from "@/components/trusted-by"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, MapPin, Phone } from "lucide-react"
-import { useState } from "react"
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import { useState } from 'react';
+import TrustedByC from '@/components/trusted-by/TrustedBy';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    phone: "",
-    service: "",
-    message: "",
-  })
+    name: '',
+    email: '',
+    company: '',
+    phone: '',
+    service: '',
+    message: '',
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle form submission
-    console.log("Form submitted:", formData)
-  }
+    console.log('Form submitted:', formData);
+  };
 
   return (
     <div className="flex flex-col">
@@ -37,14 +37,15 @@ export default function ContactPage() {
               Get in Touch
             </h1>
             <p className="text-pretty text-lg text-muted-foreground md:text-xl">
-              Ready to start your project? Have questions about our services? We'd love to hear from you. Fill out the
-              form below and we'll get back to you within 24 hours.
+              Ready to start your project? Have questions about our services?
+              We'd love to hear from you. Fill out the form below and we'll get
+              back to you within 24 hours.
             </p>
           </div>
         </div>
       </section>
 
-      <TrustedBy />
+      <TrustedByC />
 
       {/* Contact Form & Info */}
       <section className="py-20">
@@ -59,8 +60,12 @@ export default function ContactPage() {
                     <MapPin className="h-6 w-6 shrink-0 text-primary" />
                     <div>
                       <p className="font-semibold">Address</p>
-                      <p className="text-muted-foreground">123 Business Street, Suite 100</p>
-                      <p className="text-muted-foreground">New York, NY 10001</p>
+                      <p className="text-muted-foreground">
+                        123 Business Street, Suite 100
+                      </p>
+                      <p className="text-muted-foreground">
+                        New York, NY 10001
+                      </p>
                     </div>
                   </div>
                   <div className="flex gap-4">
@@ -104,7 +109,9 @@ export default function ContactPage() {
                           id="name"
                           placeholder="John Doe"
                           value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          onChange={(e) =>
+                            setFormData({ ...formData, name: e.target.value })
+                          }
                           required
                         />
                       </div>
@@ -115,7 +122,9 @@ export default function ContactPage() {
                           type="email"
                           placeholder="john@example.com"
                           value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          onChange={(e) =>
+                            setFormData({ ...formData, email: e.target.value })
+                          }
                           required
                         />
                       </div>
@@ -128,7 +137,12 @@ export default function ContactPage() {
                           id="company"
                           placeholder="Your Company"
                           value={formData.company}
-                          onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                          onChange={(e) =>
+                            setFormData({
+                              ...formData,
+                              company: e.target.value,
+                            })
+                          }
                         />
                       </div>
                       <div className="space-y-2">
@@ -138,7 +152,9 @@ export default function ContactPage() {
                           type="tel"
                           placeholder="+1 (555) 123-4567"
                           value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          onChange={(e) =>
+                            setFormData({ ...formData, phone: e.target.value })
+                          }
                         />
                       </div>
                     </div>
@@ -149,7 +165,9 @@ export default function ContactPage() {
                         id="service"
                         placeholder="e.g., Branding, Development, Marketing"
                         value={formData.service}
-                        onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, service: e.target.value })
+                        }
                       />
                     </div>
 
@@ -160,7 +178,9 @@ export default function ContactPage() {
                         placeholder="Tell us about your project..."
                         rows={6}
                         value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, message: e.target.value })
+                        }
                         required
                       />
                     </div>
@@ -176,5 +196,5 @@ export default function ContactPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

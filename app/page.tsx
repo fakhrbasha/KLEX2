@@ -17,6 +17,7 @@ import {
 import { motion, Variants } from 'framer-motion';
 import { TextParallaxContentExample } from './ProjectsTest/ProjectsTest';
 import Image from 'next/image';
+import TrustedByC from '@/components/trusted-by/TrustedBy';
 
 export default function HomePage() {
   const itemVariants: Variants = {
@@ -250,32 +251,7 @@ export default function HomePage() {
       </section>
 
       {/* Social Proof */}
-      <section className="border-b bg-muted/30 py-12">
-        <div className="container">
-          <p className="mb-8 text-center text-sm font-medium text-muted-foreground tracking-widest">
-            TRUSTED BY LEADING TEAMS
-          </p>
-
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            {[
-              { name: 'Acme Corp', logo: '/Facebook-partener.png' },
-              { name: 'TechStart', logo: '/partener-2.png' },
-              { name: 'Innovate', logo: '/partener3.png' },
-              { name: 'DesignHub', logo: '/partener4.png' },
-            ].map(({ name, logo }) => (
-              <div key={name} className="flex items-center justify-center">
-                <Image
-                  width={160}
-                  height={160}
-                  src={logo}
-                  alt={name}
-                  className="h-[200px] w-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TrustedByC />
 
       <TextParallaxContentExample />
       {/* Features Section */}

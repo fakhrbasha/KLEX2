@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-export default function TrustedBy() {
+export default function TrustedByC() {
   return (
     <div>
       <section className="border-b bg-muted/30 py-12">
@@ -12,7 +12,7 @@ export default function TrustedBy() {
 
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {[
-              { name: 'Acme Corp', logo: '/Facebook-partener.png' },
+              { name: 'FaceBook', logo: '/Facebook-partener.png' },
               { name: 'TechStart', logo: '/partener-2.png' },
               { name: 'Innovate', logo: '/partener3.png' },
               { name: 'DesignHub', logo: '/partener4.png' },

@@ -1,7 +1,7 @@
-import { TrustedBy } from "@/components/trusted-by"
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
-import Link from "next/link"
+import TrustedByC from '@/components/trusted-by/TrustedBy';
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function EducationPage() {
   return (
@@ -13,8 +13,9 @@ export default function EducationPage() {
               Education Industry Solutions
             </h1>
             <p className="mb-8 text-pretty text-lg text-muted-foreground md:text-xl">
-              Attract and engage students with compelling marketing and branding for educational institutions, EdTech
-              companies, and online learning platforms.
+              Attract and engage students with compelling marketing and branding
+              for educational institutions, EdTech companies, and online
+              learning platforms.
             </p>
             <Button size="lg" asChild>
               <Link href="/contact">
@@ -25,18 +26,21 @@ export default function EducationPage() {
           </div>
         </div>
       </section>
-      <TrustedBy />
+      <TrustedByC />
       <section className="py-20">
         <div className="container">
           <div className="mx-auto max-w-4xl">
-            <h2 className="mb-6 text-3xl font-bold">Education Marketing Expertise</h2>
+            <h2 className="mb-6 text-3xl font-bold">
+              Education Marketing Expertise
+            </h2>
             <p className="text-lg text-muted-foreground">
-              We help educational institutions and EdTech companies reach their target audiences, increase enrollment,
-              and build strong reputations in competitive markets.
+              We help educational institutions and EdTech companies reach their
+              target audiences, increase enrollment, and build strong
+              reputations in competitive markets.
             </p>
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }
