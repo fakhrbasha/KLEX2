@@ -1,23 +1,32 @@
-import { ServiceLayout } from "@/components/service-layout"
-import { TrustedBy } from "@/components/trusted-by"
-import { ServicesNavigation } from "@/components/services-navigation"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, Megaphone } from "lucide-react"
-import Link from "next/link"
-import Image from "next/image"
+import { ServiceLayout } from '@/components/service-layout';
+import { ServicesNavigation } from '@/components/services-navigation';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { ArrowRight, Megaphone } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
+import SybService from '@/app/ProjectsTest/subService/SybService';
+import TrustedByC from '@/components/trusted-by/TrustedBy';
 
 export default function PublicRelationsPage() {
   const subServices = [
     {
-      title: "Influencer Campaign",
-      description: "Strategic influencer partnerships to amplify your brand message and reach.",
+      title: 'Influencer Campaign',
+      description:
+        'Strategic influencer partnerships to amplify your brand message and reach.',
+      description2:
+        'We build strategic influencer partnerships that help amplify your brand message and expand your reach. By collaborating with the right voices in your industry, we increase credibility, drive engagement, and create authentic connections with your target audience—boosting awareness and brand loyalty.',
+      imageUrl: '/subservice/pr-1.jpg',
     },
     {
-      title: "Models",
-      description: "Professional model booking and management for campaigns and events.",
+      title: 'Models',
+      description:
+        'Professional model booking and management for campaigns and events.',
+      description2:
+        'We provide professional model booking and management services for campaigns, photoshoots, and events. By handling scheduling, contracts, and logistics, we ensure a seamless experience that allows your creative projects to run smoothly while connecting you with the right talent for your brand.',
+      imageUrl: '/subservice/pr-2.jpg',
     },
-  ]
+  ];
 
   return (
     <div className="flex flex-col">
@@ -32,8 +41,9 @@ export default function PublicRelationsPage() {
                 Public Relations
               </h1>
               <p className="mb-8 text-pretty text-lg text-muted-foreground md:text-xl">
-                Build and protect your reputation with strategic PR campaigns. From media relations to crisis
-                management, we help you tell your story to the world.
+                Build and protect your reputation with strategic PR campaigns.
+                From media relations to crisis management, we help you tell your
+                story to the world.
               </p>
               <div>
                 <Button size="lg" asChild>
@@ -45,31 +55,22 @@ export default function PublicRelationsPage() {
               </div>
             </div>
             <div className="relative aspect-video overflow-hidden rounded-2xl lg:aspect-square">
-              <Image src="/pr-hero.jpg" alt="Public Relations Services" fill className="object-cover" />
+              <Image
+                src="/pr-hero.jpg"
+                alt="Public Relations Services"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <TrustedBy />
+      <TrustedByC />
 
       <ServicesNavigation currentService="Public Relations" />
 
-      <section className="py-20">
-        <div className="container">
-          <h2 className="mb-12 text-center text-3xl font-bold tracking-tight md:text-4xl">Our Services</h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {subServices.map((service, index) => (
-              <Card key={index}>
-                <CardContent className="p-6">
-                  <h3 className="mb-2 text-xl font-semibold">{service.title}</h3>
-                  <p className="text-muted-foreground">{service.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SybService subServices={subServices} />
 
       {/* Existing code */}
       <ServiceLayout
@@ -77,47 +78,54 @@ export default function PublicRelationsPage() {
         description="Build and protect your reputation with strategic PR campaigns. From media relations to crisis management, we help you tell your story to the world."
         icon={<Megaphone className="h-8 w-8 text-primary" />}
         benefits={[
-          "Enhanced brand credibility and trust",
-          "Increased media coverage and visibility",
-          "Stronger relationships with key stakeholders",
-          "Effective crisis management and reputation protection",
-          "Thought leadership positioning",
-          "Positive public perception and sentiment",
+          'Enhanced brand credibility and trust',
+          'Increased media coverage and visibility',
+          'Stronger relationships with key stakeholders',
+          'Effective crisis management and reputation protection',
+          'Thought leadership positioning',
+          'Positive public perception and sentiment',
         ]}
         features={[
           {
-            title: "Media Relations",
-            description: "Build relationships with journalists and secure coverage in top-tier publications.",
+            title: 'Media Relations',
+            description:
+              'Build relationships with journalists and secure coverage in top-tier publications.',
           },
           {
-            title: "Press Release Writing",
-            description: "Craft compelling press releases that get noticed and generate media interest.",
+            title: 'Press Release Writing',
+            description:
+              'Craft compelling press releases that get noticed and generate media interest.',
           },
           {
-            title: "Crisis Management",
-            description: "Protect your reputation with strategic crisis communication and response plans.",
+            title: 'Crisis Management',
+            description:
+              'Protect your reputation with strategic crisis communication and response plans.',
           },
           {
-            title: "Thought Leadership",
-            description: "Position executives as industry experts through speaking engagements and articles.",
+            title: 'Thought Leadership',
+            description:
+              'Position executives as industry experts through speaking engagements and articles.',
           },
           {
-            title: "Event PR",
-            description: "Generate buzz and media coverage for product launches, events, and announcements.",
+            title: 'Event PR',
+            description:
+              'Generate buzz and media coverage for product launches, events, and announcements.',
           },
           {
-            title: "Media Training",
-            description: "Prepare spokespeople for interviews and public appearances with professional coaching.",
+            title: 'Media Training',
+            description:
+              'Prepare spokespeople for interviews and public appearances with professional coaching.',
           },
         ]}
         caseStudy={{
-          title: "Product Launch PR Campaign",
-          description: "Orchestrated a comprehensive PR campaign for a tech company's flagship product launch.",
+          title: 'Product Launch PR Campaign',
+          description:
+            "Orchestrated a comprehensive PR campaign for a tech company's flagship product launch.",
           results: [
-            "Coverage in 50+ major publications including TechCrunch and Forbes",
-            "10M+ media impressions in first month",
-            "CEO featured on 3 major podcast interviews",
-            "Contributed to 200% increase in product pre-orders",
+            'Coverage in 50+ major publications including TechCrunch and Forbes',
+            '10M+ media impressions in first month',
+            'CEO featured on 3 major podcast interviews',
+            'Contributed to 200% increase in product pre-orders',
           ],
         }}
       />
@@ -126,9 +134,12 @@ export default function PublicRelationsPage() {
       <section className="border-t bg-muted/30 py-20">
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Ready to Get Started?</h2>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
+              Ready to Get Started?
+            </h2>
             <p className="mb-8 text-pretty text-lg text-muted-foreground">
-              Let's discuss how we can help you achieve your goals with public relations.
+              Let's discuss how we can help you achieve your goals with public
+              relations.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
               <Button size="lg" asChild>
@@ -145,5 +156,5 @@ export default function PublicRelationsPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

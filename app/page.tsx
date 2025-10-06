@@ -15,6 +15,9 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { motion, Variants } from 'framer-motion';
+import { TextParallaxContentExample } from './ProjectsTest/ProjectsTest';
+import Image from 'next/image';
+import TrustedByC from '@/components/trusted-by/TrustedBy';
 
 export default function HomePage() {
   const itemVariants: Variants = {
@@ -196,7 +199,7 @@ export default function HomePage() {
               variants={itemVariants}
               className="mx-auto mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl"
             >
-              TaskFlow helps teams collaborate seamlessly, track progress
+              KLEX helps teams collaborate seamlessly, track progress
               effortlessly, and deliver projects on time. Stop juggling tools
               and start getting things done.
             </motion.p>
@@ -248,30 +251,9 @@ export default function HomePage() {
       </section>
 
       {/* Social Proof */}
-      <section className="border-b bg-muted/30 py-12">
-        <div className="container">
-          <p className="mb-8 text-center text-sm font-medium text-muted-foreground">
-            TRUSTED BY LEADING TEAMS
-          </p>
-          <div className="grid grid-cols-2 items-center gap-8 md:grid-cols-4 lg:grid-cols-6">
-            {[
-              'Acme Corp',
-              'TechStart',
-              'Innovate',
-              'BuildCo',
-              'DesignHub',
-              'DataFlow',
-            ].map((company) => (
-              <div key={company} className="flex items-center justify-center">
-                <span className="text-lg font-semibold text-muted-foreground">
-                  {company}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TrustedByC />
 
+      <TextParallaxContentExample />
       {/* Features Section */}
       <section className="py-24 md:py-32">
         <div className="container">
@@ -539,8 +521,8 @@ export default function HomePage() {
               Ready to transform how your team works?
             </h2>
             <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
-              Join thousands of teams already using TaskFlow to collaborate
-              better, ship faster, and achieve more together.
+              Join thousands of teams already using KLEX to collaborate better,
+              ship faster, and achieve more together.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <motion.div

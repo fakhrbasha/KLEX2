@@ -1,7 +1,7 @@
-import { TrustedBy } from "@/components/trusted-by"
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
-import Link from "next/link"
+import TrustedByC from '@/components/trusted-by/TrustedBy';
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function FinancePage() {
   return (
@@ -13,8 +13,9 @@ export default function FinancePage() {
               Finance Industry Solutions
             </h1>
             <p className="mb-8 text-pretty text-lg text-muted-foreground md:text-xl">
-              Build trust and credibility with professional marketing and branding for financial services, fintech, and
-              banking institutions.
+              Build trust and credibility with professional marketing and
+              branding for financial services, fintech, and banking
+              institutions.
             </p>
             <Button size="lg" asChild>
               <Link href="/contact">
@@ -25,18 +26,21 @@ export default function FinancePage() {
           </div>
         </div>
       </section>
-      <TrustedBy />
+      <TrustedByC />
       <section className="py-20">
         <div className="container">
           <div className="mx-auto max-w-4xl">
-            <h2 className="mb-6 text-3xl font-bold">Financial Services Expertise</h2>
+            <h2 className="mb-6 text-3xl font-bold">
+              Financial Services Expertise
+            </h2>
             <p className="text-lg text-muted-foreground">
-              We help financial institutions build trust through compliant marketing, thought leadership, and
-              professional branding that resonates with both B2B and B2C audiences.
+              We help financial institutions build trust through compliant
+              marketing, thought leadership, and professional branding that
+              resonates with both B2B and B2C audiences.
             </p>
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }
