@@ -41,7 +41,6 @@ export function Navbar() {
   const [isPlatformOpen, setIsPlatformOpen] = React.useState(false);
   const [isMoreOpen, setIsMoreOpen] = React.useState(false);
 
-  // إغلاق القوائم لما تضغط في أي مكان فاضي
   React.useEffect(() => {
     const handleClickOutside = () => {
       setIsPlatformOpen(false);

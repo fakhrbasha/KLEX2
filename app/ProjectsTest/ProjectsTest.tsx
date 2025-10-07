@@ -255,7 +255,7 @@ const ExampleContent = ({
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.97 }}
-        className="flex items-center gap-2 rounded-full bg-neutral-900 px-8 py-3 text-lg font-medium text-white shadow-lg transition hover:bg-neutral-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+        className="flex items-center gap-2 rounded-2xl bg-neutral-900 px-8 py-3 text-lg font-medium text-white shadow-lg transition hover:bg-neutral-700 dark:bg-[#3be6c4] dark:text-black dark:hover:text-white dark:hover:bg-[#0b4554]"
       >
         Learn more <FiArrowUpRight />
       </motion.button>

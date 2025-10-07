@@ -18,6 +18,10 @@ import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
 import TrustedByC from '@/components/trusted-by/TrustedBy';
 import { TextParallaxContentExample } from '@/app/ProjectsTest/ProjectsTest';
+import OurLatestProject from '../ourLastestProject/OurLastestProject';
+import LogoCloud from '../LogoCloud/LogoCloud';
+import TestimonialCarousel from '../Testimonial/Testimonial';
+import QouteAndGoToPrice from '../QouteAndGoToPrice/QouteAndGoToPrice';
 
 export default function HomePage() {
   const itemVariants: Variants = {
@@ -256,7 +260,7 @@ export default function HomePage() {
       <TextParallaxContentExample />
       {/* Features Section */}
       <section className="py-24 md:py-32">
-        <div className="container">
+        <div className="container ">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-balance text-4xl font-bold tracking-tight md:text-5xl">
               Everything you need to manage projects
@@ -355,166 +359,22 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* our latest project */}
+      <OurLatestProject />
+
+      {/* logo cloud  */}
+      <LogoCloud />
+
+      {/* what client says  */}
+
+      <TestimonialCarousel />
+
       {/* Pricing Section */}
-      <section className="border-y bg-muted/30 py-24 md:py-32">
-        <div className="container">
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 text-balance text-4xl font-bold tracking-tight md:text-5xl">
-              Simple, transparent pricing
-            </h2>
-            <p className="mx-auto max-w-2xl text-pretty text-lg text-muted-foreground">
-              Choose the plan that's right for your team. All plans include a
-              14-day free trial.
-            </p>
-          </div>
-
-          <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-3">
-            {/* Starter Plan */}
-            <Card className="relative flex flex-col border-2">
-              <CardContent className="flex flex-1 flex-col p-8">
-                <div className="mb-6">
-                  <h3 className="mb-2 text-2xl font-bold">Starter</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Perfect for small teams
-                  </p>
-                </div>
-                <div className="mb-6">
-                  <div className="flex items-baseline">
-                    <span className="text-5xl font-bold">$12</span>
-                    <span className="ml-2 text-muted-foreground">
-                      /user/month
-                    </span>
-                  </div>
-                </div>
-                <ul className="mb-8 flex-1 space-y-3">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
-                    <span className="text-sm">Up to 10 team members</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
-                    <span className="text-sm">Unlimited projects</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
-                    <span className="text-sm">Basic analytics</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
-                    <span className="text-sm">Email support</span>
-                  </li>
-                </ul>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full bg-transparent"
-                >
-                  Start Free Trial
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Professional Plan */}
-            <Card className="relative flex flex-col border-2 border-primary shadow-lg">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                <Badge className="bg-primary px-4 py-1 text-primary-foreground">
-                  Most Popular
-                </Badge>
-              </div>
-              <CardContent className="flex flex-1 flex-col p-8">
-                <div className="mb-6">
-                  <h3 className="mb-2 text-2xl font-bold">Professional</h3>
-                  <p className="text-sm text-muted-foreground">
-                    For growing teams
-                  </p>
-                </div>
-                <div className="mb-6">
-                  <div className="flex items-baseline">
-                    <span className="text-5xl font-bold">$24</span>
-                    <span className="ml-2 text-muted-foreground">
-                      /user/month
-                    </span>
-                  </div>
-                </div>
-                <ul className="mb-8 flex-1 space-y-3">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
-                    <span className="text-sm">Unlimited team members</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
-                    <span className="text-sm">Advanced analytics</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
-                    <span className="text-sm">Time tracking</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
-                    <span className="text-sm">Priority support</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
-                    <span className="text-sm">Custom integrations</span>
-                  </li>
-                </ul>
-                <Button size="lg" className="w-full">
-                  Start Free Trial
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Enterprise Plan */}
-            <Card className="relative flex flex-col border-2">
-              <CardContent className="flex flex-1 flex-col p-8">
-                <div className="mb-6">
-                  <h3 className="mb-2 text-2xl font-bold">Enterprise</h3>
-                  <p className="text-sm text-muted-foreground">
-                    For large organizations
-                  </p>
-                </div>
-                <div className="mb-6">
-                  <div className="flex items-baseline">
-                    <span className="text-5xl font-bold">Custom</span>
-                  </div>
-                </div>
-                <ul className="mb-8 flex-1 space-y-3">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
-                    <span className="text-sm">Everything in Professional</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
-                    <span className="text-sm">SSO & advanced security</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
-                    <span className="text-sm">Dedicated account manager</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
-                    <span className="text-sm">Custom onboarding</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
-                    <span className="text-sm">24/7 phone support</span>
-                  </li>
-                </ul>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full bg-transparent"
-                >
-                  Contact Sales
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <TrustedByC />
+      <QouteAndGoToPrice />
 
       {/* CTA Section */}
-      <section className="py-24 md:py-32">
+      {/* <section className="py-24 md:py-32">
         <div className="container">
           <div className="mx-auto max-w-4xl rounded-2xl border-2 bg-card p-12 text-center shadow-lg md:p-16">
             <h2 className="mb-6 text-balance text-4xl font-bold tracking-tight md:text-5xl">
@@ -561,7 +421,7 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
