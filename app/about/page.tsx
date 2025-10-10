@@ -1,9 +1,11 @@
 import TimelineDemo from '@/components/History/History';
 import MissionVisionSection from '@/components/missionandvision/MissionAndVision';
+import QouteAndGoToPrice from '@/components/QouteAndGoToPrice/QouteAndGoToPrice';
 import TrustedByC from '@/components/trusted-by/TrustedBy';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Award, Globe, Users, Zap } from 'lucide-react';
+import Link from 'next/link';
 
 export default function AboutPage() {
   return (
@@ -25,34 +27,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      {/* <section className="py-20">
-        <div className="container">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-            <div>
-              <h2 className="mb-4 text-3xl font-bold tracking-tight">
-                Our Mission
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                To empower teams worldwide with intuitive project management
-                tools that eliminate complexity and foster collaboration. We
-                believe that great software should get out of your way and let
-                you focus on what matters most—delivering exceptional work.
-              </p>
-            </div>
-            <div>
-              <h2 className="mb-4 text-3xl font-bold tracking-tight">
-                Our Vision
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                To become the most trusted project management platform for teams
-                of all sizes, known for our simplicity, reliability, and
-                commitment to helping teams achieve their goals. We envision a
-                world where every team can work together effortlessly.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section> */}
+
       <MissionVisionSection />
       {/* TimeLine */}
       <TimelineDemo />
@@ -120,24 +95,31 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-20">
+
+      <section className="py-20 bg-muted/30">
         <div className="container">
-          <div className="grid gap-8 md:grid-cols-4">
-            <div className="text-center">
-              <div className="mb-2 text-4xl font-bold md:text-5xl">10,000+</div>
-              <div className="text-muted-foreground">Active Teams</div>
+          <div className="flex flex-col items-center justify-between gap-8 text-center md:flex-row md:text-left">
+            {/* Left Side */}
+            <div className="max-w-xl">
+              <p className="mb-2 text-sm font-medium uppercase tracking-widest text-muted-foreground">
+                Growth Years
+              </p>
+              <h2 className="text-3xl font-bold leading-tight md:text-4xl">
+                Our journey of impact through the years
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                Discover how our strategic milestones shaped our growth and
+                helped businesses thrive.
+              </p>
             </div>
-            <div className="text-center">
-              <div className="mb-2 text-4xl font-bold md:text-5xl">500K+</div>
-              <div className="text-muted-foreground">Projects Managed</div>
-            </div>
-            <div className="text-center">
-              <div className="mb-2 text-4xl font-bold md:text-5xl">99.9%</div>
-              <div className="text-muted-foreground">Uptime</div>
-            </div>
-            <div className="text-center">
-              <div className="mb-2 text-4xl font-bold md:text-5xl">4.9/5</div>
-              <div className="text-muted-foreground">Customer Rating</div>
+
+            {/* Right Side */}
+            <div className="flex justify-center md:justify-end">
+              <Link href="/business-development">
+                <Button size="lg" className="rounded-2xl bg-[#3be6c4]">
+                  See Business Development
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -146,23 +128,7 @@ export default function AboutPage() {
       {/* trust */}
       <TrustedByC />
       {/* CTA */}
-      <section className="border-t bg-muted/30 py-20">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
-              Ready to Get Started?
-            </h2>
-            <p className="mb-8 text-pretty text-lg text-muted-foreground">
-              Join thousands of teams already using KLEX to work better
-              together.
-            </p>
-            <Button size="lg">
-              Start Free Trial
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-      </section>
+      <QouteAndGoToPrice />
     </div>
   );
 }

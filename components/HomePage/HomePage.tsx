@@ -17,7 +17,7 @@ import {
 import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
 import TrustedByC from '@/components/trusted-by/TrustedBy';
-import { TextParallaxContentExample } from '@/app/ProjectsTest/ProjectsTest';
+import { TextParallaxContenT } from '@/app/ProjectsTest/TextParallaxContenT';
 import OurLatestProject from '../ourLastestProject/OurLastestProject';
 import LogoCloud from '../LogoCloud/LogoCloud';
 import TestimonialCarousel from '../Testimonial/Testimonial';
@@ -257,7 +257,7 @@ export default function HomePage() {
       {/* Social Proof */}
       <TrustedByC />
 
-      <TextParallaxContentExample />
+      <TextParallaxContenT />
       {/* Features Section */}
       <section className="py-24 md:py-32">
         <div className="container ">

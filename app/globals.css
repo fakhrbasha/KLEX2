@@ -72,6 +72,8 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
+  /* --baseColor : #3be6c4;
+  --pColor : #0b4554 */
 }
 
 @theme inline {
@@ -133,23 +135,23 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #001515;     
+  background:  #3be6c4;     
 
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #001515;     
+  background:  #3be6c4;     
 
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #001515;     
+  background:  #3be6c4;     
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #001515 #f1f1f1;
+  scrollbar-color: #3be6c4 transparent;
 }
 
 ::view-transition-old(root), ::view-transition-new(root) {

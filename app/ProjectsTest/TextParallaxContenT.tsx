@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { FiArrowUpRight } from 'react-icons/fi';
 import Link from 'next/link';
 
-export const TextParallaxContentExample = () => {
+export const TextParallaxContenT = () => {
   return (
     <div className="bg-white dark:bg-neutral-950 text-neutral-900 dark:text-white">
       <TextParallaxContent

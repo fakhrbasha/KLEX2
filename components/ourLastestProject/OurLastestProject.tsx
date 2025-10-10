@@ -32,7 +32,7 @@ export default function OurLatestProject() {
             to perform at their best.
           </p>
           <Link href="/projects">
-            <Button size="lg" className="mt-4">
+            <Button size="lg" className="mt-4 bg-[#3be6c4]">
               View All Projects
             </Button>
           </Link>

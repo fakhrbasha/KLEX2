@@ -35,7 +35,7 @@ export default function QouteAndGoToPrice() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <Link href="/marketplace">
-            <Button size="lg" className="text-base px-8">
+            <Button size="lg" className="text-base px-8 bg-[#3be6c4]">
               View Plans & Pricing
             </Button>
           </Link>
