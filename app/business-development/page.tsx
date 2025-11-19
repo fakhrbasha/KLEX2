@@ -1,3 +1,5 @@
+import DepartmentsSection from '@/components/Departments/DepartmentsSection';
+import QouteAndGoToPrice from '@/components/QouteAndGoToPrice/QouteAndGoToPrice';
 import TrustedByC from '@/components/trusted-by/TrustedBy';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -30,7 +32,7 @@ export default function BusinessDevelopmentPage() {
       </section>
 
       <TrustedByC />
-
+      <DepartmentsSection />
       {/* Services */}
       <section className="py-20">
         <div className="container">
@@ -96,7 +98,7 @@ export default function BusinessDevelopmentPage() {
       </section>
 
       {/* Partnership Opportunities */}
-      <section className="border-y bg-muted/30 py-20">
+      {/* <section className="border-y bg-muted/30 py-20">
         <div className="container">
           <div className="mx-auto max-w-4xl">
             <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-4xl">
@@ -137,28 +139,10 @@ export default function BusinessDevelopmentPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
-      <section className="py-20">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
-              Let's Grow Together
-            </h2>
-            <p className="mb-8 text-pretty text-lg text-muted-foreground">
-              Contact our business development team to discuss partnership
-              opportunities and growth strategies.
-            </p>
-            <Button size="lg" asChild>
-              <Link href="/contact">
-                Start the Conversation
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <QouteAndGoToPrice />
     </div>
   );
 }

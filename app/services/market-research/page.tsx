@@ -70,7 +70,7 @@ export default function MarketResearchPage() {
                 brand for success.
               </p>
               <div>
-                <Button size="lg" asChild>
+                <Button size="lg" asChild className="bg-[#3be6c4]">
                   <Link href="/contact">
                     Get Started
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -93,27 +93,6 @@ export default function MarketResearchPage() {
       <TrustedByC />
 
       <ServicesNavigation currentService="Market Research & Planning" />
-
-      {/* Sub-Services Section */}
-      {/* <section className="py-20">
-        <div className="container">
-          <h2 className="mb-12 text-center text-3xl font-bold tracking-tight md:text-4xl">
-            Our Services
-          </h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {subServices.map((service, index) => (
-              <Card key={index}>
-                <CardContent className="p-6">
-                  <h3 className="mb-2 text-xl font-semibold">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground">{service.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       <SybService subServices={subServices} />
 

@@ -1,3 +1,5 @@
+import CTA from '@/components/CTA/CTA';
+import AchievementsCard from '@/components/StorySuccess/StorySuccess';
 import TrustedByC from '@/components/trusted-by/TrustedBy';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -77,7 +79,7 @@ export default function SuccessStoriesPage() {
       <TrustedByC />
 
       {/* Success Stories */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container">
           <div className="space-y-16">
             {stories.map((story, index) => (
@@ -131,28 +133,10 @@ export default function SuccessStoriesPage() {
             ))}
           </div>
         </div>
-      </section>
-
+      </section> */}
+      <AchievementsCard />
       {/* CTA */}
-      <section className="border-t bg-muted/30 py-20">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
-              Write Your Success Story
-            </h2>
-            <p className="mb-8 text-pretty text-lg text-muted-foreground">
-              Join the growing list of businesses that have transformed their
-              results with KLEX.
-            </p>
-            <Button size="lg" asChild>
-              <Link href="/contact">
-                Get Started Today
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CTA />
     </div>
   );
 }

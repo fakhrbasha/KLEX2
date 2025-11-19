@@ -1,4 +1,3 @@
-import { TrustedBy } from '@/components/trusted-by';
 import { ServicesNavigation } from '@/components/services-navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -58,7 +57,7 @@ export default function ConsultationPage() {
                 seize opportunities, and achieve sustainable growth.
               </p>
               <div>
-                <Button size="lg" asChild>
+                <Button size="lg" asChild className="bg-[#3be6c4]">
                   <Link href="/contact">
                     Get Started
                     <ArrowRight className="ml-2 h-4 w-4" />

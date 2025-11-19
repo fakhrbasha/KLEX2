@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 interface SubService {
   title: string;
@@ -63,8 +64,9 @@ export default function SybService({ subServices }: SybServiceProps) {
                     </p>
 
                     <div className="flex gap-4">
-                      <Button>Get Quote</Button>
-                      <Button variant="outline">Learn More</Button>
+                      <Button className="bg-[#3be6c4]">
+                        <Link href={'/contact'}>Contact Us</Link>
+                      </Button>
                     </div>
                   </div>
                 </div>

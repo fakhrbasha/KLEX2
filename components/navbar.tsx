@@ -40,8 +40,10 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isPlatformOpen, setIsPlatformOpen] = React.useState(false);
   const [isMoreOpen, setIsMoreOpen] = React.useState(false);
+  const [mobileDropdown, setMobileDropdown] = React.useState<string | null>(
+    null
+  );
 
-  // إغلاق القوائم لما تضغط في أي مكان فاضي
   React.useEffect(() => {
     const handleClickOutside = () => {
       setIsPlatformOpen(false);
@@ -53,11 +55,18 @@ export function Navbar() {
 
   const handleMenuClick = (e: React.MouseEvent) => e.stopPropagation();
 
+  const toggleMobileDropdown = (name: string) => {
+    setMobileDropdown((prev) => (prev === name ? null : name));
+  };
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="container flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/90 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60 shadow-sm">
+      <nav className="container flex h-16 items-center justify-around md:justify-between">
+        {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-          <span className="text-2xl font-bold tracking-tight">KLEX</span>
+          <span className="text-2xl font-bold tracking-tight text-foreground">
+            KLEX
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -70,7 +79,7 @@ export function Navbar() {
                   setIsPlatformOpen(!isPlatformOpen);
                   setIsMoreOpen(false);
                 }}
-                className="inline-flex h-10 items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground gap-1"
+                className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-[#3be6c4] gap-1"
               >
                 Our Platform
                 <ChevronDown
@@ -89,13 +98,13 @@ export function Navbar() {
                     transition={{ duration: 0.25 }}
                     onClick={(e) => e.stopPropagation()}
                     onMouseLeave={() => setIsPlatformOpen(false)}
-                    className="absolute left-0 top-full mt-2 w-[600px] rounded-md border bg-popover p-4 shadow-lg grid grid-cols-2 gap-3"
+                    className="absolute left-0 top-full mt-2 w-[600px] rounded-lg border bg-popover p-4 shadow-lg grid grid-cols-2 gap-3"
                   >
                     {platformServices.map((service) => (
                       <Link
                         key={service.href}
                         href={service.href}
-                        className="block rounded-md p-2 text-sm text-muted-foreground hover:bg-accent hover:text-foreground transition"
+                        className="block rounded-md p-2 text-sm text-muted-foreground hover:bg-[#3be6c4]/10 hover:text-[#3be6c4] transition"
                         onClick={() => setIsPlatformOpen(false)}
                       >
                         {service.title}
@@ -110,7 +119,7 @@ export function Navbar() {
             <NavigationMenuItem>
               <Link
                 href="/tour-by-industry"
-                className="inline-flex h-10 items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-[#3be6c4]"
               >
                 Tour By Industry
               </Link>
@@ -123,7 +132,7 @@ export function Navbar() {
                   setIsMoreOpen(!isMoreOpen);
                   setIsPlatformOpen(false);
                 }}
-                className="inline-flex h-10 items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground gap-1"
+                className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-[#3be6c4] gap-1"
               >
                 More
                 <ChevronDown
@@ -142,13 +151,13 @@ export function Navbar() {
                     transition={{ duration: 0.25 }}
                     onClick={(e) => e.stopPropagation()}
                     onMouseLeave={() => setIsMoreOpen(false)}
-                    className="absolute left-0 top-full mt-2 w-[400px] rounded-md border bg-popover p-4 shadow-lg grid gap-3"
+                    className="absolute left-0 top-full mt-2 w-[400px] rounded-lg border bg-popover p-4 shadow-lg grid gap-3"
                   >
                     {moreLinks.map((link) => (
                       <Link
                         key={link.href}
                         href={link.href}
-                        className="block rounded-md p-2 text-sm text-muted-foreground hover:bg-accent hover:text-foreground transition"
+                        className="block rounded-md p-2 text-sm text-muted-foreground hover:bg-[#3be6c4]/10 hover:text-[#3be6c4] transition"
                         onClick={() => setIsMoreOpen(false)}
                       >
                         {link.title}
@@ -163,7 +172,7 @@ export function Navbar() {
             <NavigationMenuItem>
               <Link
                 href="/contact"
-                className="inline-flex h-10 items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-[#3be6c4]"
               >
                 Contact Us
               </Link>
@@ -172,7 +181,7 @@ export function Navbar() {
             <NavigationMenuItem>
               <Link
                 href="/careers"
-                className="inline-flex h-10 items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-[#3be6c4]"
               >
                 Careers
               </Link>
@@ -180,6 +189,7 @@ export function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
 
+        {/* Right side */}
         <div className="flex items-center gap-2">
           <ThemeToggle />
 
@@ -191,86 +201,103 @@ export function Navbar() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col gap-4">
-                <div className="space-y-3">
-                  <h4 className="font-semibold">Our Platform</h4>
-                  {platformServices.map((service) => (
-                    <Link
-                      key={service.href}
-                      href={service.href}
-                      className="block text-sm text-muted-foreground hover:text-foreground"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {service.title}
-                    </Link>
-                  ))}
+
+            <SheetContent
+              side="right"
+              className="w-[300px] sm:w-[400px] bg-background text-foreground overflow-y-auto"
+            >
+              <nav className="flex flex-col gap-4 mt-6 py-10 px-6">
+                {/* OUR PLATFORM */}
+                <div>
+                  <button
+                    onClick={() => toggleMobileDropdown('platform')}
+                    className="flex w-full items-center justify-between font-semibold hover:text-[#3be6c4] transition"
+                  >
+                    Our Platform
+                    <ChevronDown
+                      className={`h-4 w-4 transition-transform duration-300 ${
+                        mobileDropdown === 'platform' ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+                  <AnimatePresence>
+                    {mobileDropdown === 'platform' && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="mt-2 ml-3 flex flex-col gap-2"
+                      >
+                        {platformServices.map((service) => (
+                          <Link
+                            key={service.href}
+                            href={service.href}
+                            className="block rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-[#3be6c4]/10 hover:text-[#3be6c4] transition"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {service.title}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
 
-                <div className="space-y-3 border-t pt-4">
-                  <h4 className="font-semibold">Tour By Industry</h4>
-                  <Link
-                    href="/industries/technology"
-                    className="block text-sm text-muted-foreground hover:text-foreground"
-                    onClick={() => setIsOpen(false)}
+                {/* MORE */}
+                <div className="border-t border-border pt-3">
+                  <button
+                    onClick={() => toggleMobileDropdown('more')}
+                    className="flex w-full items-center justify-between font-semibold hover:text-[#3be6c4] transition"
                   >
-                    Technology
-                  </Link>
-                  <Link
-                    href="/industries/healthcare"
-                    className="block text-sm text-muted-foreground hover:text-foreground"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Healthcare
-                  </Link>
-                  <Link
-                    href="/industries/finance"
-                    className="block text-sm text-muted-foreground hover:text-foreground"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Finance
-                  </Link>
-                  <Link
-                    href="/industries/retail"
-                    className="block text-sm text-muted-foreground hover:text-foreground"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Retail
-                  </Link>
-                  <Link
-                    href="/industries/education"
-                    className="block text-sm text-muted-foreground hover:text-foreground"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Education
-                  </Link>
+                    More
+                    <ChevronDown
+                      className={`h-4 w-4 transition-transform duration-300 ${
+                        mobileDropdown === 'more' ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+                  <AnimatePresence>
+                    {mobileDropdown === 'more' && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="mt-2 ml-3 flex flex-col gap-2"
+                      >
+                        {moreLinks.map((link) => (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            className="block rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-[#3be6c4]/10 hover:text-[#3be6c4] transition"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {link.title}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
 
-                <div className="space-y-3 border-t pt-4">
-                  <h4 className="font-semibold">More</h4>
-                  {moreLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="block text-sm text-muted-foreground hover:text-foreground"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {link.title}
-                    </Link>
-                  ))}
-                </div>
-
-                <div className="space-y-3 border-t pt-4">
+                {/* CONTACT / CAREERS */}
+                <div className="space-y-2 border-t border-border pt-3">
                   <Link
                     href="/contact"
-                    className="block font-semibold hover:text-accent"
+                    className="block font-semibold hover:text-[#3be6c4] transition"
                     onClick={() => setIsOpen(false)}
                   >
                     Contact Us
                   </Link>
                   <Link
+                    href="/tour-by-industry"
+                    className="block font-semibold hover:text-[#3be6c4] transition"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Tour By Industry
+                  </Link>
+                  <Link
                     href="/careers"
-                    className="block font-semibold hover:text-accent"
+                    className="block font-semibold hover:text-[#3be6c4] transition"
                     onClick={() => setIsOpen(false)}
                   >
                     Careers

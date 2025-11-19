@@ -46,7 +46,7 @@ export default function PublicRelationsPage() {
                 story to the world.
               </p>
               <div>
-                <Button size="lg" asChild>
+                <Button size="lg" asChild className="bg-[#3be6c4]">
                   <Link href="/contact">
                     Get Started
                     <ArrowRight className="ml-2 h-4 w-4" />
